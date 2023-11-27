@@ -83,3 +83,19 @@ function startTimer() {
     }
   }, 1000);
 }
+
+//Funnction to show quaestions and append them to the HTML
+function showQuestion() {
+  const currentQuestion = questions[currentQuestionIndex];
+  questionText.textContent = currentQuestion.question;
+
+  answersContainer.innerHTML = "";
+  currentQuestion.answers.forEach((answer, index) => {
+    const answerBtn = document.createElement("button");
+    answerBtn.textContent = answer;
+    answerBtn.classList.add("answerBtn");
+    answerBtn.dataset.index = index;
+    answerBtn.addEventListener("click", checkAnswer);
+    answersContainer.appendChild(answerBtn);
+  });
+}
