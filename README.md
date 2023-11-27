@@ -56,7 +56,7 @@ For any inquiries or suggestions, please contact https://github.com/RaelNW.
 
 ## link
 
-Github link https://github.com/RaelNW/CodeQuiz
+Github Repo link https://github.com/RaelNW/CodeQuiz
 
 ## Screenshot
 
