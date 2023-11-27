@@ -1,5 +1,5 @@
 
-//Add event listeners
+//Added variables for the elements in the HTML
 const startBtn = document.getElementById("startBtn");
 const questionContainer = document.getElementById("questionContainer");
 const questionText = document.getElementById("questionText");
@@ -63,4 +63,23 @@ const questions = [
         correctAnswer: "var colors = [“red”, “green”, “blue”]",
     },
 ];
+ //Added event listener to the start button
+startBtn.addEventListener("click", startQuiz);
 
+//function to start the Quiz
+function startQuiz() {
+  startBtn.classList.add("hidden");
+  questionContainer.classList.remove("hidden");
+  startTimer();
+  showQuestion();
+}
+//function to start the timer
+function startTimer() {
+  timerInterval = setInterval(() => {
+    time--;
+    timeLeft.textContent = time;
+    if (time <= 0) {
+      endQuiz();
+    }
+  }, 1000);
+}
