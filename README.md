@@ -1,3 +1,15 @@
+## Table of Contents
+
+- [Code Quiz](#code-quiz)
+  - [Features](#features)
+  - [Instructions](#instructions)
+  - [Usage](#usage)
+  - [Files and Structure](#files-and-structure)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
+  - [Screenshot](#screenshot)
+
 # Code Quiz
 
 This is a simple web-based code quiz application built using HTML, CSS, and JavaScript. It asks a series of multiple-choice questions and adds scores if the questions are right or deducts time if the answer is wrong.
@@ -11,6 +23,7 @@ This is a simple web-based code quiz application built using HTML, CSS, and Java
 ## Instructions
 
 To run the code quiz:
+
 1. Download or clone the repository.
 2. Open the `index.html` file in a web browser.
 
@@ -42,4 +55,9 @@ This project is licensed under the [MIT License](LICENSE).
 For any inquiries or suggestions, please contact https://github.com/RaelNW.
 
 ## link
+
 Github link https://github.com/RaelNW/CodeQuiz
+
+## Screenshot
+
+![Code Quiz Screenshot](/Screenshot%202023-11-27%20at%202.06.42%20AM.png)
