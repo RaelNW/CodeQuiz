@@ -3,7 +3,7 @@ main {
     margin-right: 100px;
 }
 
-.button {
+ button {
     padding: 10px 20px;
     background-color: purple;
     color: #fff;
@@ -13,4 +13,12 @@ main {
 
 .button:hover {
     background-color: #aaa;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

@@ -131,19 +131,19 @@ function endQuiz() {
 
 saveScoreBtn.addEventListener("click", saveScore);
 
-//Function to save the score
-function saveScore() {
-  const initials = initialsInput.value.trim();
-    if (initials === "") {
-        alert("Please enter your initials");
-        return;
-    }
-  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-  const newScore = {
-    score,
-    initials,
-  };
-  highScores.push(newScore);
-  localStorage.setItem("highScores", JSON.stringify(highScores));
-  window.location.href = "highscores.html";
+// Function to display high scores
+function displayHighScores() {
+  const highScoresList = document.getElementById('highScoresList');
+  const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
+  // Clear the existing list before displaying new scores
+  highScoresList.innerHTML = '';
+
+  // Populate the high scores list
+  highScores.forEach((scoreObj, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${index + 1}. ${scoreObj.initials} - ${scoreObj.score}`;
+    highScoresList.appendChild(listItem);
+  });
 }
+
