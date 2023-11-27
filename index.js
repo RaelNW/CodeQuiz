@@ -84,7 +84,7 @@ function startTimer() {
   }, 1000);
 }
 
-//Funnction to show quaestions and append them to the HTML
+//Function to show questions and append them to the HTML
 function showQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
   questionText.textContent = currentQuestion.question;
@@ -98,4 +98,25 @@ function showQuestion() {
     answerBtn.addEventListener("click", checkAnswer);
     answersContainer.appendChild(answerBtn);
   });
+}
+
+//Function to check answers and compare them to the correct answer
+function checkAnswer(event) {
+  const selectedAnswerIndex = parseInt(event.target.dataset.index);
+  const currentQuestion = questions[currentQuestionIndex];
+
+  if (selectedAnswerIndex === currentQuestion.correctIndex) {
+    resultText.textContent = "Correct!";
+    score += 10; // Increase score for a correct answer
+  } else {
+    resultText.textContent = "Incorrect!";
+    time -= 10; // Deduct 10 seconds for an incorrect answer
+  }
+
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    endQuiz();
+  }
 }
