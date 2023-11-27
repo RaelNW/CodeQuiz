@@ -24,14 +24,18 @@ const questions = [
     answers: ["<javascript>", "<scripted>", "<script>", "<js>"],
     correctAnswer: "<script>",
   },
-  {
-    question:
-      "What is the HTML tag under which one can write the JavaScript code?",
-    answers: ["<javascript>", "<scripted>", "<script>", "<js>"],
-    correctAnswer: "<script>",
-  },
-
-  {
+{
+  question: "In javascript, what is a block of statement?",
+  answers: [
+    "Conditional block",
+    "block that combines a number of statements into a single compound statement",
+    "both conditional block and a single statement",
+    "block that contains a single statement",
+  ],
+  correctAnswer:
+    "block that combines a number of statements into a single compound statement",
+}, 
+{
     question:
       "What is the correct syntax for referring to an external script called “geek.js”?",
     answers: [
@@ -100,12 +104,11 @@ function showQuestion() {
   });
 }
 
-//Function to check answers and compare them to the correct answer
 function checkAnswer(event) {
   const selectedAnswerIndex = parseInt(event.target.dataset.index);
   const currentQuestion = questions[currentQuestionIndex];
 
-  if (selectedAnswerIndex === currentQuestion.correctAnswer) {
+  if (event.target.textContent === currentQuestion.correctAnswer) {
     resultText.textContent = "Correct!";
     score += 10; // Increase score for a correct answer
   } else {
@@ -119,6 +122,7 @@ function checkAnswer(event) {
     endQuiz();
   }
 }
+
 
 //Function to end the Quiz
 function endQuiz() {
