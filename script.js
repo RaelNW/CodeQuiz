@@ -105,7 +105,7 @@ function checkAnswer(event) {
   const selectedAnswerIndex = parseInt(event.target.dataset.index);
   const currentQuestion = questions[currentQuestionIndex];
 
-  if (selectedAnswerIndex === currentQuestion.correctIndex) {
+  if (selectedAnswerIndex === currentQuestion.correctAnswer) {
     resultText.textContent = "Correct!";
     score += 10; // Increase score for a correct answer
   } else {
