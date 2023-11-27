@@ -120,3 +120,30 @@ function checkAnswer(event) {
     endQuiz();
   }
 }
+
+//Function to end the Quiz
+function endQuiz() {
+  clearInterval(timerInterval);
+  questionContainer.classList.add("hidden");
+  resultContainer.classList.remove("hidden");
+  resultText.textContent = `The quiz is over final score is ${score}`;
+}
+
+saveScoreBtn.addEventListener("click", saveScore);
+
+//Function to save the score
+function saveScore() {
+  const initials = initialsInput.value.trim();
+    if (initials === "") {
+        alert("Please enter your initials");
+        return;
+    }
+  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+  const newScore = {
+    score,
+    initials,
+  };
+  highScores.push(newScore);
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+  window.location.href = "highscores.html";
+}
